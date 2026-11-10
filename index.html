@@ -22,16 +22,12 @@
             background: #44475a;
             border-radius: 12px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            border: 2px solid;
+            border: 2px solid #50fa7b;
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
         }
-        .card-1 { border-color: #50fa7b; }
-        .card-2 { border-color: #ff79c6; }
-        .card-3 { border-color: #bd93f9; }
-        
         .fake-cursor {
             position: absolute;
             left: 50%;
@@ -46,18 +42,16 @@
 
     <!-- YASB Status Bar -->
     <header class="h-8 bg-[#1e1f29] border-b border-[#44475a] flex items-center justify-between px-4 text-xs select-none z-50">
-        <!-- Left identity & Workspaces -->
         <div class="flex items-center space-x-4">
             <span class="text-[#8be9fd] font-bold">medplane@nishantkumar</span>
             <div class="flex items-center space-x-1.5 border-l border-[#44475a] pl-4">
                 <span class="text-[#6272a4]">[ws]</span>
-                <button onclick="switchTab('dev')" id="tab-dev" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">dev</button>
+                <button onclick="switchTab('about')" id="tab-about" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">about</button>
                 <button onclick="switchTab('web')" id="tab-web" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">web</button>
                 <button onclick="switchTab('game')" id="tab-game" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">game</button>
             </div>
         </div>
 
-        <!-- System Tray with Live Clock -->
         <div class="flex items-center space-x-4 text-[#bd93f9]">
             <span>CPU: 12%</span>
             <span>RAM: 4.2GB</span>
@@ -69,47 +63,83 @@
     <!-- Main Workspace Container -->
     <main class="relative flex-1 w-full overflow-hidden">
 
-        <!-- WORKSPACE 1: DEV (Two cards side-by-side) -->
-        <div id="view-dev" class="workspace-view absolute inset-0">
-            <!-- Window 1 (Left side) -->
-            <div class="portfolio-card card-1 w-[420px] p-6" id="card-1">
-                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
-                    <span class="text-[#50fa7b] font-bold text-sm">c_text_library.c</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-[#50fa7b]">C Text Library</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Dynamic heap allocation library handling substring slicing, minimum capacity doubling, and realloc safety checks without standard lib dependencies.</p>
-                <div class="text-[10px] text-[#6272a4]">github.com/Medplane</div>
-            </div>
-            <div class="fake-cursor" id="cursor-1">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
-            </div>
+        <!-- WORKSPACE 1: ABOUT ME -->
+        <div id="view-about" class="workspace-view absolute inset-0">
+            <div class="portfolio-card w-[950px] p-8 flex gap-8" id="card-about">
+                
+                <!-- Left Column: Bio & Name -->
+                <div class="w-1/2 flex flex-col justify-between">
+                    <div>
+                        <!-- Username-->
+                        <div class="text-[#50fa7b] text-xs font-bold mb-2">// Medplane · MEng Computer Science Bristol</div>
+                        
+                        <!--Name -->
+                        <h1 class="text-4xl font-extrabold text-[#f8f8f2] leading-tight mb-4">
+                            Nishant <br><span class="text-[#50fa7b]">Dileep</span> <br>Kumar
+                        </h1>
 
-            <!-- Window 2 (Right side) -->
-            <div class="portfolio-card card-2 w-[420px] p-6" id="card-2">
-                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
-                    <span class="text-[#ff79c6] font-bold text-sm">present_cipher.v</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        <!-- EDIT HERE: Your main bio paragraph -->
+                        <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                            I'm a Computer Science MEng student at <strong class="text-[#8be9fd]">University of Bristol</strong> who builds <strong class="text-[#f1fa8c]">random projects</strong> that interest me. I love <strong class="text-[#ff79c6]">Music, Video Games, Books and Coding of course</strong>! Whether I'm <strong class="text-[#50fa7b]">doing what I love</strong> or building projects, I love to expand my skill and want to create something everybody will love!
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex space-x-3 mt-6">
+                        <!-- Link buttons -->
+                        <a href="https://github.com/Medplane" target="_blank" class="px-4 py-2 bg-[#50fa7b] text-[#282a36] font-bold text-xs rounded hover:opacity-90 transition">GitHub ↗</a>
+                        <a href="https://www.linkedin.com/in/nishant-kumar-a926b7449/" target="_blank" class="px-4 py-2 border border-[#6272a4] text-[#f8f8f2] font-bold text-xs rounded hover:bg-[#44475a] transition">LinkedIn ↗</a>
+                    </div>
                 </div>
-                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Verilog Block Cipher</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Hardware implementation of the PRESENT block cipher featuring 4-bit S-box substitution modules, key schedule rotation, and permutation layers.</p>
-                <div class="text-[10px] text-[#6272a4]">Verilog HDL / FPGA Simulation</div>
+
+                <!-- Right Column: Stats Grid & Tech Stack -->
+                <div class="w-1/2 flex flex-col justify-between">
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                            <div class="text-2xl font-bold text-[#50fa7b]">99%</div>
+                            <div class="text-[11px] text-[#6272a4] mt-1">Maths (CBSE)</div>
+                        </div>
+                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                            <div class="text-2xl font-bold text-[#ff79c6]">12h</div>
+                            <div class="text-[11px] text-[#6272a4] mt-1">Counterspell Hackathon</div>
+                        </div>
+                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                            <div class="text-2xl font-bold text-[#bd93f9]">MENG</div>
+                            <div class="text-[11px] text-[#6272a4] mt-1">Degree (2026-2030)</div>
+                        </div>
+                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                            <div class="text-2xl font-bold text-[#8be9fd]">Placeholder</div>
+                            <div class="text-[11px] text-[#6272a4] mt-1">Stat Placeholder</div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Badges (EDIT HERE) -->
+                    <div class="mt-4">
+                        <div class="text-[10px] text-[#6272a4] mb-2 uppercase tracking-wider">Core Tech Stack</div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Python</span>
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">SQL</span>
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">C</span>
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">HTML/CSS</span>
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Git</span>
+                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Verilog</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="fake-cursor" id="cursor-2">
+            <div class="fake-cursor" id="cursor-about">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
             </div>
         </div>
 
         <!-- WORKSPACE 2: WEB -->
         <div id="view-web" class="workspace-view absolute inset-0 hidden">
-            <div class="portfolio-card card-2 w-[480px] p-6" id="card-web">
-                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
-                    <span class="text-[#ff79c6] font-bold text-sm">app.py</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Spotify Recommendation Web App</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Flask & Spotify Web API integration built in WSL, featuring OAuth authorization flow, dynamic track queue generation, and personalized playlist caching.</p>
-                <div class="text-[10px] text-[#6272a4]">Python / Flask / Tailwind CSS</div>
+            <div class="portfolio-card w-[480px] p-6" id="card-web">
+                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Web Project Title</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Description of your web project goes here as a placeholder.</p>
+                <div class="text-[10px] text-[#6272a4]">Tech Stack / Tools</div>
             </div>
             <div class="fake-cursor" id="cursor-web">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
@@ -118,14 +148,10 @@
 
         <!-- WORKSPACE 3: GAME -->
         <div id="view-game" class="workspace-view absolute inset-0 hidden">
-            <div class="portfolio-card card-3 w-[480px] p-6" id="card-game">
-                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
-                    <span class="text-[#bd93f9] font-bold text-sm">main.gd</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                </div>
-                <h2 class="text-xl font-bold mb-2 text-[#bd93f9]">Time-Manipulation Puzzle Game</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">2D Godot & Pygame project engineered during a 48-hour game jam, featuring custom sprite mechanics, state-reversal gameplay loops, and Pico Park platformer movement.</p>
-                <div class="text-[10px] text-[#6272a4]">GDScript / Python / Godot Engine</div>
+            <div class="portfolio-card w-[480px] p-6" id="card-game">
+                <h2 class="text-xl font-bold mb-2 text-[#bd93f9]">Game Project Title</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Description of your game development project goes here as a placeholder.</p>
+                <div class="text-[10px] text-[#6272a4]">Engine / Language</div>
             </div>
             <div class="fake-cursor" id="cursor-game">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
@@ -136,7 +162,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Live Clock Widget
         function updateClock() {
             const now = new Date();
             document.getElementById('live-clock').innerText = now.toTimeString().split(' ')[0];
@@ -144,37 +169,25 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Off-screen drag animation targeting the top header bar (macos title bar)
         function animateToIntro(cardId, cursorId, finalXOffset = 0) {
-            // Card starts far off-screen right
             gsap.set(cardId, { x: 900, y: 0, opacity: 0 });
-            // Cursor starts even further right, positioned near the top header bar height (~ -110px from center)
-            gsap.set(cursorId, { x: 1050, y: -110, opacity: 1, scale: 1 });
+            gsap.set(cursorId, { x: 1050, y: -160, opacity: 1, scale: 1 });
 
             const tl = gsap.timeline({ delay: 0.2 });
-
-            // 1. Cursor moves from off-screen right to lock onto the top header bar of the off-screen card
-            tl.to(cursorId, { x: 900 + 30, y: -110, duration: 0.7, ease: "power2.out" })
-              // 2. Click / grab effect on the title bar
+            tl.to(cursorId, { x: 900 + 30, y: -160, duration: 0.7, ease: "power2.out" })
               .to(cursorId, { scale: 0.85, duration: 0.1 })
-              // 3. Drag both card and cursor smoothly from off-screen into their final centered position
               .to(cardId, { x: finalXOffset, y: 0, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
-              .to(cursorId, { x: finalXOffset + 30, y: -110, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
-              // 4. Release click
+              .to(cursorId, { x: finalXOffset + 30, y: -160, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
               .to(cursorId, { scale: 1, duration: 0.1 })
-              // 5. Cursor drifts away and fades out
               .to(cursorId, { x: "+=100", y: "+=60", opacity: 0, duration: 0.5, ease: "power2.in" });
         }
 
-        // Play Dev tab intro on load
-        function playDevIntro() {
-            animateToIntro("#card-1", "#cursor-1", -230); // Left card offset
-            animateToIntro("#card-2", "#cursor-2", 230);  // Right card offset
+        function playAboutIntro() {
+            animateToIntro("#card-about", "#cursor-about", 0);
         }
 
-        document.addEventListener("DOMContentLoaded", playDevIntro);
+        document.addEventListener("DOMContentLoaded", playAboutIntro);
 
-        // Workspace tab switching logic
         function switchTab(workspaceName) {
             document.querySelectorAll('.workspace-view').forEach(view => view.classList.add('hidden'));
             document.getElementById(`view-${workspaceName}`).classList.remove('hidden');
@@ -186,9 +199,8 @@
             const activeTab = document.getElementById(`tab-${workspaceName}`);
             activeTab.classList.add('bg-[#44475a]', 'text-[#50fa7b]', 'font-bold');
 
-            // Trigger the off-screen drag animation for the selected tab
-            if (workspaceName === 'dev') {
-                playDevIntro();
+            if (workspaceName === 'about') {
+                playAboutIntro();
             } else if (workspaceName === 'web') {
                 animateToIntro("#card-web", "#cursor-web", 0);
             } else if (workspaceName === 'game') {
@@ -196,10 +208,9 @@
             }
         }
 
-        // GlazeWM-style keyboard shortcuts (Alt + 1, 2, 3)
         window.addEventListener('keydown', (e) => {
             if (e.altKey) {
-                if (e.key === '1') switchTab('dev');
+                if (e.key === '1') switchTab('about');
                 if (e.key === '2') switchTab('web');
                 if (e.key === '3') switchTab('game');
             }
