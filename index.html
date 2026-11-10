@@ -13,7 +13,7 @@
             background-color: #282a36;
             color: #f8f8f2;
             font-family: 'JetBrains Mono', monospace;
-            overflow: hidden;
+            overflow-x: hidden;
             margin: 0;
             background-image: radial-gradient(#44475a 1px, transparent 1px);
             background-size: 24px 24px;
@@ -22,16 +22,10 @@
             background: #44475a;
             border-radius: 12px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            border: 2px solid #50fa7b;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            border: 2px solid;
         }
         .fake-cursor {
             position: absolute;
-            left: 50%;
-            top: 50%;
             z-index: 9999;
             transform-origin: top left;
             pointer-events: none;
@@ -46,8 +40,8 @@
             <span class="text-[#8be9fd] font-bold">medplane@nishantkumar</span>
             <div class="flex items-center space-x-1.5 border-l border-[#44475a] pl-4">
                 <span class="text-[#6272a4]">[ws]</span>
-                <button onclick="switchTab('about')" id="tab-about" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">about</button>
-                <button onclick="switchTab('web')" id="tab-web" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">web</button>
+                <button onclick="switchTab('about')" id="tab-about" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">About Me!</button>
+                <button onclick="switchTab('projects')" id="tab-projects" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">Projects!</button>
                 <button onclick="switchTab('game')" id="tab-game" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">game</button>
             </div>
         </div>
@@ -55,7 +49,7 @@
         <div class="flex items-center space-x-4 text-[#bd93f9]">
             <span>CPU: 12%</span>
             <span>RAM: 4.2GB</span>
-            <span class="text-[#50fa7b]">● WSL</span>
+            <span class="text-[#50fa7b]">● :D</span>
             <span id="live-clock" class="text-[#f1fa8c] font-bold">00:00:00</span>
         </div>
     </header>
@@ -64,97 +58,110 @@
     <main class="relative flex-1 w-full overflow-hidden">
 
         <!-- WORKSPACE 1: ABOUT ME -->
-        <div id="view-about" class="workspace-view absolute inset-0">
-            <div class="portfolio-card w-[950px] p-8 flex gap-8" id="card-about">
-                
-                <!-- Left Column: Bio & Name -->
-                <div class="w-1/2 flex flex-col justify-between">
-                    <div>
-                        <!-- Username-->
-                        <div class="text-[#50fa7b] text-xs font-bold mb-2">// Medplane · MEng Computer Science Bristol</div>
-                        
-                        <!--Name -->
-                        <h1 class="text-4xl font-extrabold text-[#f8f8f2] leading-tight mb-4">
-                            Nishant <br><span class="text-[#50fa7b]">Dileep</span> <br>Kumar
-                        </h1>
-
-                        <!-- EDIT HERE: Your main bio paragraph -->
-                        <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
-                            I'm a Computer Science MEng student at <strong class="text-[#8be9fd]">University of Bristol</strong> who builds <strong class="text-[#f1fa8c]">random projects</strong> that interest me. I love <strong class="text-[#ff79c6]">Music, Video Games, Books and Coding of course</strong>! Whether I'm <strong class="text-[#50fa7b]">doing what I love</strong> or building projects, I love to expand my skill and want to create something everybody will love!
-                        </p>
-                    </div>
-
-                    <!-- Action Buttons -->
-                    <div class="flex space-x-3 mt-6">
-                        <!-- Link buttons -->
-                        <a href="https://github.com/Medplane" target="_blank" class="px-4 py-2 bg-[#50fa7b] text-[#282a36] font-bold text-xs rounded hover:opacity-90 transition">GitHub ↗</a>
-                        <a href="https://www.linkedin.com/in/nishant-kumar-a926b7449/" target="_blank" class="px-4 py-2 border border-[#6272a4] text-[#f8f8f2] font-bold text-xs rounded hover:bg-[#44475a] transition">LinkedIn ↗</a>
-                    </div>
+        <div id="view-about" class="workspace-view absolute inset-0 flex items-center justify-center">
+            <div class="portfolio-card w-[950px] p-8 border-[#50fa7b]" id="card-about" style="position: relative;">
+                <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                    <span class="text-[#50fa7b] font-bold text-xs">// about_me.md</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
                 </div>
-
-                <!-- Right Column: Stats Grid & Tech Stack -->
-                <div class="w-1/2 flex flex-col justify-between">
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                            <div class="text-2xl font-bold text-[#50fa7b]">99%</div>
-                            <div class="text-[11px] text-[#6272a4] mt-1">Maths (CBSE)</div>
+                <div class="flex gap-8">
+                    <div class="w-1/2 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[#50fa7b] text-xs font-bold mb-2">// Medplane · MEng Computer Science Bristol</div>
+                            <h1 class="text-4xl font-extrabold text-[#f8f8f2] leading-tight mb-4">
+                                Nishant <br><span class="text-[#50fa7b]">Dileep</span> <br>Kumar
+                            </h1>
+                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                I'm a Computer Science MEng student at <strong class="text-[#8be9fd]">University of Bristol</strong> who builds <strong class="text-[#f1fa8c]">random projects</strong> that interest me. I love <strong class="text-[#ff79c6]">Music, Video Games, Books and Coding of course</strong>!
+                            </p>
                         </div>
-                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                            <div class="text-2xl font-bold text-[#ff79c6]">12h</div>
-                            <div class="text-[11px] text-[#6272a4] mt-1">Counterspell Hackathon</div>
-                        </div>
-                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                            <div class="text-2xl font-bold text-[#bd93f9]">MENG</div>
-                            <div class="text-[11px] text-[#6272a4] mt-1">Degree (2026-2030)</div>
-                        </div>
-                        <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                            <div class="text-2xl font-bold text-[#8be9fd]">Placeholder</div>
-                            <div class="text-[11px] text-[#6272a4] mt-1">Stat Placeholder</div>
+                        <div class="flex space-x-3 mt-6">
+                            <a href="https://github.com/Medplane" target="_blank" class="px-4 py-2 bg-[#50fa7b] text-[#282a36] font-bold text-xs rounded hover:opacity-90 transition">GitHub ↗</a>
+                            <a href="https://www.linkedin.com/in/nishant-kumar-a926b7449/" target="_blank" class="px-4 py-2 border border-[#6272a4] text-[#f8f8f2] font-bold text-xs rounded hover:bg-[#44475a] transition">LinkedIn ↗</a>
                         </div>
                     </div>
-
-                    <!-- Tech Stack Badges (EDIT HERE) -->
-                    <div class="mt-4">
-                        <div class="text-[10px] text-[#6272a4] mb-2 uppercase tracking-wider">Core Tech Stack</div>
-                        <div class="flex flex-wrap gap-1.5">
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Python</span>
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">SQL</span>
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">C</span>
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">HTML/CSS</span>
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Git</span>
-                            <span class="px-2 py-1 bg-[#282a36] border border-[#6272a4]/50 rounded text-[10px] text-[#f8f8f2]">Verilog</span>
+                    <div class="w-1/2 flex flex-col justify-between">
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                <div class="text-2xl font-bold text-[#50fa7b]">99%</div>
+                                <div class="text-[11px] text-[#6272a4] mt-1">Maths (CBSE)</div>
+                            </div>
+                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                <div class="text-2xl font-bold text-[#ff79c6]">12h</div>
+                                <div class="text-[11px] text-[#6272a4] mt-1">Counterspell Hackathon</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="fake-cursor" id="cursor-about">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
             </div>
         </div>
 
-        <!-- WORKSPACE 2: WEB -->
-        <div id="view-web" class="workspace-view absolute inset-0 hidden">
-            <div class="portfolio-card w-[480px] p-6" id="card-web">
-                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Web Project Title</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Description of your web project goes here as a placeholder.</p>
-                <div class="text-[10px] text-[#6272a4]">Tech Stack / Tools</div>
-            </div>
-            <div class="fake-cursor" id="cursor-web">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+        <!-- WORKSPACE 2: PROJECTS (Scrollable container with multiple cards) -->
+        <div id="view-projects" class="workspace-view absolute inset-0 overflow-y-auto hidden p-12">
+            <div class="max-w-[1000px] mx-auto flex flex-col gap-12 pb-24">
+                
+                <!-- Project Card 1 -->
+                <div class="portfolio-card w-full p-8 border-[#bd93f9] relative" id="proj-card-1">
+                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                        <span class="text-[#bd93f9] font-bold text-xs">// project_one.py</span>
+                        <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                    </div>
+                    <div class="flex gap-8 items-start">
+                        <div class="w-1/2">
+                            <div class="text-[#50fa7b] text-[11px] font-bold mb-1">🟢 Live at project-one.me</div>
+                            <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project One Title</h2>
+                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your first project goes here. Built with custom architecture and high-performance algorithms.</p>
+                            <div class="flex space-x-4 text-xs font-bold">
+                                <a href="#" target="_blank" class="text-[#50fa7b] hover:underline">Visit Project ↗</a>
+                                <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                            </div>
+                        </div>
+                        <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
+                            // Code preview or metrics snippet for Project 1
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="portfolio-card w-full p-8 border-[#50fa7b] relative" id="proj-card-2">
+                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                        <span class="text-[#50fa7b] font-bold text-xs">// project_two.rs</span>
+                        <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                    </div>
+                    <div class="flex gap-8 items-start">
+                        <div class="w-1/2">
+                            <div class="text-[#50fa7b] text-[11px] font-bold mb-1">🟢 Live at project-two.me</div>
+                            <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project Two Title</h2>
+                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your second project goes here. Focused on systems programming or web applications.</p>
+                            <div class="flex space-x-4 text-xs font-bold">
+                                <a href="#" target="_blank" class="text-[#50fa7b] hover:underline">Visit Project ↗</a>
+                                <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                            </div>
+                        </div>
+                        <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
+                            // Code preview or metrics snippet for Project 2
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADD MORE PROJECT CARDS HERE FOLLOWING THE SAME STRUCTURE -->
+
             </div>
         </div>
 
         <!-- WORKSPACE 3: GAME -->
-        <div id="view-game" class="workspace-view absolute inset-0 hidden">
-            <div class="portfolio-card w-[480px] p-6" id="card-game">
-                <h2 class="text-xl font-bold mb-2 text-[#bd93f9]">Game Project Title</h2>
+        <div id="view-game" class="workspace-view absolute inset-0 flex items-center justify-center hidden">
+            <div class="portfolio-card w-[480px] p-6 border-[#ff5555]" id="card-game" style="position: relative;">
+                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]/40">
+                    <span class="text-[#ff5555] font-bold text-xs">// game.gd</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-[#ff5555]">Game Project Title</h2>
                 <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Description of your game development project goes here as a placeholder.</p>
                 <div class="text-[10px] text-[#6272a4]">Engine / Language</div>
-            </div>
-            <div class="fake-cursor" id="cursor-game">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
             </div>
         </div>
 
@@ -169,24 +176,22 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        function animateToIntro(cardId, cursorId, finalXOffset = 0) {
+        function animateCenterCard(cardId, cursorId) {
             gsap.set(cardId, { x: 900, y: 0, opacity: 0 });
-            gsap.set(cursorId, { x: 1050, y: -160, opacity: 1, scale: 1 });
+            gsap.set(cursorId, { x: 1050, y: -160, opacity: 1, scale: 1, position: "absolute", left: "50%", top: "50%" });
 
             const tl = gsap.timeline({ delay: 0.2 });
             tl.to(cursorId, { x: 900 + 30, y: -160, duration: 0.7, ease: "power2.out" })
               .to(cursorId, { scale: 0.85, duration: 0.1 })
-              .to(cardId, { x: finalXOffset, y: 0, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
-              .to(cursorId, { x: finalXOffset + 30, y: -160, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
+              .to(cardId, { x: 0, y: 0, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
+              .to(cursorId, { x: 30, y: -160, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
               .to(cursorId, { scale: 1, duration: 0.1 })
               .to(cursorId, { x: "+=100", y: "+=60", opacity: 0, duration: 0.5, ease: "power2.in" });
         }
 
-        function playAboutIntro() {
-            animateToIntro("#card-about", "#cursor-about", 0);
-        }
-
-        document.addEventListener("DOMContentLoaded", playAboutIntro);
+        document.addEventListener("DOMContentLoaded", () => {
+            animateCenterCard("#card-about", "#cursor-about");
+        });
 
         function switchTab(workspaceName) {
             document.querySelectorAll('.workspace-view').forEach(view => view.classList.add('hidden'));
@@ -200,18 +205,21 @@
             activeTab.classList.add('bg-[#44475a]', 'text-[#50fa7b]', 'font-bold');
 
             if (workspaceName === 'about') {
-                playAboutIntro();
-            } else if (workspaceName === 'web') {
-                animateToIntro("#card-web", "#cursor-web", 0);
+                animateCenterCard("#card-about", "#cursor-about");
+            } else if (workspaceName === 'projects') {
+                gsap.fromTo("#proj-card-1, #proj-card-2", 
+                    { y: 50, opacity: 0 }, 
+                    { y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: "power2.out" }
+                );
             } else if (workspaceName === 'game') {
-                animateToIntro("#card-game", "#cursor-game", 0);
+                animateCenterCard("#card-game", "#cursor-game");
             }
         }
 
         window.addEventListener('keydown', (e) => {
             if (e.altKey) {
                 if (e.key === '1') switchTab('about');
-                if (e.key === '2') switchTab('web');
+                if (e.key === '2') switchTab('projects');
                 if (e.key === '3') switchTab('game');
             }
         });
