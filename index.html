@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant's Portfolio - GlazeWM & YASB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #282a36;
+            color: #f8f8f2;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
+            margin: 0;
+            background-image: radial-gradient(#44475a 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .portfolio-card {
+            background: #44475a;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border: 2px solid;
+            transition: border-color 0.2s ease;
+        }
+        .card-1 { border-color: #50fa7b; }
+        .card-2 { border-color: #ff79c6; }
+        .card-3 { border-color: #bd93f9; }
+        
+        .fake-cursor {
+            position: absolute;
+            z-index: 9999;
+            transform-origin: top left;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased h-screen flex flex-col overflow-hidden">
+
+    <!-- YASB Status Bar -->
+    <header class="h-8 bg-[#1e1f29] border-b border-[#44475a] flex items-center justify-between px-4 text-xs select-none z-50">
+        <!-- Workspaces -->
+        <div class="flex items-center space-x-2">
+            <span class="text-[#6272a4]">[workspace]</span>
+            <button onclick="switchTab('dev')" id="tab-dev" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">1:dev</button>
+            <button onclick="switchTab('web')" id="tab-web" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">2:web</button>
+            <button onclick="switchTab('game')" id="tab-game" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">3:game</button>
+        </div>
+
+        <!-- Center Title -->
+        <div class="text-[#8be9fd]">medplane@dileeplaptop:~</div>
+
+        <!-- System Tray -->
+        <div class="flex items-center space-x-4 text-[#bd93f9]">
+            <span>CPU: 12%</span>
+            <span>RAM: 4.2GB</span>
+            <span class="text-[#50fa7b]">● WSL-Ubuntu</span>
+        </div>
+    </header>
+
+    <!-- Main Workspace Container -->
+    <main class="relative flex-1 w-full overflow-hidden">
+
+        <!-- WORKSPACE 1: DEV (C Library & Verilog Cipher) -->
+        <div id="view-dev" class="workspace-view absolute inset-0 p-8 flex items-center justify-center gap-6">
+            <!-- Window 1 -->
+            <div class="portfolio-card card-1 w-[420px] p-6 relative" id="card-1">
+                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
+                    <span class="text-[#50fa7b] font-bold text-sm">c_text_library.c</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-[#50fa7b]">C Text Library</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Dynamic heap allocation library handling substring slicing, minimum capacity doubling, and realloc safety checks without standard lib dependencies.</p>
+                <div class="text-[10px] text-[#6272a4]">github.com/Medplane</div>
+            </div>
+            <div class="fake-cursor" id="cursor-1">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+            </div>
+
+            <!-- Window 2 -->
+            <div class="portfolio-card card-2 w-[420px] p-6 relative" id="card-2">
+                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
+                    <span class="text-[#ff79c6] font-bold text-sm">present_cipher.v</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Verilog Block Cipher</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Hardware implementation of the PRESENT block cipher featuring 4-bit S-box substitution modules, key schedule rotation, and permutation layers.</p>
+                <div class="text-[10px] text-[#6272a4]">Verilog HDL / FPGA Simulation</div>
+            </div>
+            <div class="fake-cursor" id="cursor-2">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+            </div>
+        </div>
+
+        <!-- WORKSPACE 2: WEB -->
+        <div id="view-web" class="workspace-view absolute inset-0 p-8 flex items-center justify-center gap-6 hidden">
+            <div class="portfolio-card card-2 w-[480px] p-6">
+                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
+                    <span class="text-[#ff79c6] font-bold text-sm">app.py</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-[#ff79c6]">Spotify Recommendation Web App</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Flask & Spotify Web API integration built in WSL, featuring OAuth authorization flow, dynamic track queue generation, and personalized playlist caching.</p>
+                <div class="text-[10px] text-[#6272a4]">Python / Flask / Tailwind CSS</div>
+            </div>
+        </div>
+
+        <!-- WORKSPACE 3: GAME -->
+        <div id="view-game" class="workspace-view absolute inset-0 p-8 flex items-center justify-center gap-6 hidden">
+            <div class="portfolio-card card-3 w-[480px] p-6">
+                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]">
+                    <span class="text-[#bd93f9] font-bold text-sm">main.gd</span>
+                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                </div>
+                <h2 class="text-xl font-bold mb-2 text-[#bd93f9]">Time-Manipulation Puzzle Game</h2>
+                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">2D Godot & Pygame project engineered during a 48-hour game jam, featuring custom sprite mechanics, state-reversal gameplay loops, and Pico Park platformer movement.</p>
+                <div class="text-[10px] text-[#6272a4]">GDScript / Python / Godot Engine</div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // Initial load animation for Workspace 1
+        function playDevIntro() {
+            gsap.set(["#card-1", "#card-2"], { x: window.innerWidth, opacity: 0 });
+            gsap.set(["#cursor-1", "#cursor-2"], { x: window.innerWidth + 100, y: window.innerHeight / 2 });
+
+            const tl = gsap.timeline({ delay: 0.3 });
+            
+            // Animate Card 1 & Cursor 1
+            tl.to("#cursor-1", { x: window.innerWidth / 2 - 240, y: window.innerHeight / 2 - 40, duration: 0.8, ease: "power2.out" })
+              .to("#cursor-1", { scale: 0.85, duration: 0.1 })
+              .to(["#card-1", "#cursor-1"], { x: window.innerWidth / 2 - 440, opacity: 1, duration: 0.8, ease: "power3.out" })
+              .to("#cursor-1", { scale: 1, duration: 0.1 })
+              .to("#cursor-1", { x: "+=150", y: "+=100", opacity: 0, duration: 0.5 });
+
+            // Animate Card 2 & Cursor 2
+            tl.to(["#card-2", "#cursor-2"], { opacity: 1, duration: 0.1 }, "-=1.0")
+              .to("#cursor-2", { x: window.innerWidth / 2 + 180, y: window.innerHeight / 2 - 40, duration: 0.8, ease: "power2.out" })
+              .to("#cursor-2", { scale: 0.85, duration: 0.1 })
+              .to(["#card-2", "#cursor-2"], { x: window.innerWidth / 2 + 20, opacity: 1, duration: 0.8, ease: "power3.out" })
+              .to("#cursor-2", { scale: 1, duration: 0.1 })
+              .to("#cursor-2", { x: "+=150", y: "+=100", opacity: 0, duration: 0.5 });
+        }
+
+        document.addEventListener("DOMContentLoaded", playDevIntro);
+
+        // Workspace tab switching logic
+        function switchTab(workspaceName) {
+            document.querySelectorAll('.workspace-view').forEach(view => view.classList.add('hidden'));
+            document.getElementById(`view-${workspaceName}`).classList.remove('hidden');
+
+            document.querySelectorAll('.workspace-tab').forEach(tab => {
+                tab.classList.remove('bg-[#44475a]', 'text-[#50fa7b]', 'font-bold');
+                tab.classList.add('text-[#f8f8f2]');
+            });
+            const activeTab = document.getElementById(`tab-${workspaceName}`);
+            activeTab.classList.add('bg-[#44475a]', 'text-[#50fa7b]', 'font-bold');
+
+            if (workspaceName === 'dev') {
+                playDevIntro();
+            } else {
+                gsap.fromTo(`#view-${workspaceName} .portfolio-card`, 
+                    { scale: 0.95, opacity: 0 }, 
+                    { scale: 1, opacity: 1, duration: 0.4, ease: "power2.out" }
+                );
+            }
+        }
+
+        // GlazeWM-style keyboard shortcuts (Alt + 1, 2, 3)
+        window.addEventListener('keydown', (e) => {
+            if (e.altKey) {
+                if (e.key === '1') switchTab('dev');
+                if (e.key === '2') switchTab('web');
+                if (e.key === '3') switchTab('game');
+            }
+        });
+    </script>
+</body>
+</html>
