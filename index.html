@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nishant's Portfolio - GlazeWM & YASB</title>
+    <title>Nishant Kumar — CS @ Bristol</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
                 <!-- Tabs with custom data colors matching their cards -->
                 <button onclick="switchTab('about')" id="tab-about" data-color="#50fa7b" class="workspace-tab px-2 py-0.5 rounded bg-[#44475a] text-[#50fa7b] font-bold cursor-pointer transition">About Me!</button>
                 <button onclick="switchTab('projects')" id="tab-projects" data-color="#bd93f9" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">Projects</button>
-                <button onclick="switchTab('game')" id="tab-game" data-color="#ff5555" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">game</button>
+                <button onclick="switchTab('experience')" id="tab-experience" data-color="#ff5555" class="workspace-tab px-2 py-0.5 rounded text-[#f8f8f2] hover:bg-[#44475a] cursor-pointer transition">Experience</button>
             </div>
         </div>
 
@@ -60,115 +60,213 @@
 
         <!-- WORKSPACE 1: ABOUT ME -->
         <div id="view-about" class="workspace-view absolute inset-0 flex items-center justify-center">
-            <div class="portfolio-card w-[950px] p-8 border-[#50fa7b]" id="card-about" style="position: relative;">
-                <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
-                    <span class="text-[#50fa7b] font-bold text-xs">// about_me.tsx</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                </div>
-                <div class="flex gap-8">
-                    <div class="w-1/2 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[#50fa7b] text-xs font-bold mb-2">// Medplane · MEng Computer Science Bristol</div>
-                            <h1 class="text-4xl font-extrabold text-[#f8f8f2] leading-tight mb-4">
-                                Nishant <br><span class="text-[#50fa7b]">Dileep</span> <br>Kumar
-                            </h1>
-                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
-                                I'm a Computer Science MEng student at <strong class="text-[#8be9fd]">University of Bristol</strong> who builds <strong class="text-[#f1fa8c]">random projects</strong> that interest me. I love <strong class="text-[#ff79c6]">Music, Video Games, Books and Coding of course</strong>!
-                            </p>
+            <div class="relative flex items-center justify-center">
+                <div class="portfolio-card w-[950px] p-8 border-[#50fa7b]" id="card-about" style="position: relative;">
+                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                        <span class="text-[#50fa7b] font-bold text-xs">// about_me.tsx</span>
+                        <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                    </div>
+                    <div class="flex gap-8">
+                        <div class="w-1/2 flex flex-col justify-between">
+                            <div>
+                                <div class="text-[#50fa7b] text-xs font-bold mb-2">// Medplane · MEng Computer Science Bristol</div>
+                                <h1 class="text-4xl font-extrabold text-[#f8f8f2] leading-tight mb-4">
+                                    Nishant <br><span class="text-[#50fa7b]">Dileep</span> <br>Kumar
+                                </h1>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                    I'm a Computer Science MEng student at <strong class="text-[#8be9fd]">University of Bristol</strong> who builds <strong class="text-[#f1fa8c]">random projects</strong> that interest me. I love <strong class="text-[#ff79c6]">Music, Video Games, Books and Coding of course</strong>!
+                                </p>
+                            </div>
+                            <div class="flex space-x-3 mt-6">
+                                <a href="https://github.com/Medplane" target="_blank" class="px-4 py-2 bg-[#50fa7b] text-[#282a36] font-bold text-xs rounded hover:opacity-90 transition">GitHub ↗</a>
+                                <a href="https://www.linkedin.com/in/nishant-kumar-a926b7449/" target="_blank" class="px-4 py-2 border border-[#6272a4] text-[#f8f8f2] font-bold text-xs rounded hover:bg-[#44475a] transition">LinkedIn ↗</a>
+                            </div>
                         </div>
-                        <div class="flex space-x-3 mt-6">
-                            <a href="https://github.com/Medplane" target="_blank" class="px-4 py-2 bg-[#50fa7b] text-[#282a36] font-bold text-xs rounded hover:opacity-90 transition">GitHub ↗</a>
-                            <a href="https://www.linkedin.com/in/nishant-kumar-a926b7449/" target="_blank" class="px-4 py-2 border border-[#6272a4] text-[#f8f8f2] font-bold text-xs rounded hover:bg-[#44475a] transition">LinkedIn ↗</a>
+                        <div class="w-1/2 flex flex-col justify-between">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                    <div class="text-2xl font-bold text-[#50fa7b]">99%</div>
+                                    <div class="text-[11px] text-[#6272a4] mt-1">Maths (CBSE)</div>
+                                </div>
+                                <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                    <div class="text-2xl font-bold text-[#ff79c6]">12h</div>
+                                    <div class="text-[11px] text-[#6272a4] mt-1">Counterspell Hackathon</div>
+                                </div>
+                                <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                    <div class="text-2xl font-bold text-[#bd93f9]">MENG</div>
+                                    <div class="text-[11px] text-[#6272a4] mt-1">Degree (2026-2030)</div>
+                                </div>
+                                <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
+                                    <div class="text-2xl font-bold text-[#8be9fd]">Placeholder</div>
+                                    <div class="text-[11px] text-[#6272a4] mt-1">Stat Placeholder</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-1/2 flex flex-col justify-between">
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                                <div class="text-2xl font-bold text-[#50fa7b]">99%</div>
-                                <div class="text-[11px] text-[#6272a4] mt-1">Maths (CBSE)</div>
-                            </div>
-                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                                <div class="text-2xl font-bold text-[#ff79c6]">12h</div>
-                                <div class="text-[11px] text-[#6272a4] mt-1">Counterspell Hackathon</div>
-                            </div>
-                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                                <div class="text-2xl font-bold text-[#bd93f9]">MENG</div>
-                                <div class="text-[11px] text-[#6272a4] mt-1">Degree (2026-2030)</div>
-                            </div>
-                            <div class="bg-[#282a36] p-4 rounded-lg border border-[#6272a4]/40">
-                                <div class="text-2xl font-bold text-[#8be9fd]">Placeholder</div>
-                                <div class="text-[11px] text-[#6272a4] mt-1">Stat Placeholder</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div class="fake-cursor" id="cursor-about">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                <div class="fake-cursor" id="cursor-about">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                </div>
             </div>
         </div>
 
         <!-- WORKSPACE 2: PROJECTS -->
-        <div id="view-projects" class="workspace-view absolute inset-0 overflow-y-auto hidden p-12">
+        <div id="view-projects" class="workspace-view absolute inset-0 overflow-y-auto overflow-x-hidden hidden p-12">
             <div class="max-w-[1000px] mx-auto flex flex-col gap-12 pb-24">
                 
                 <!-- Project Card 1 (Purple) -->
-                <div class="portfolio-card w-full p-8 border-[#bd93f9] relative" id="proj-card-1">
-                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
-                        <span class="text-[#bd93f9] font-bold text-xs">// project_one.py</span>
-                        <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                    </div>
-                    <div class="flex gap-8 items-start">
-                        <div class="w-1/2">
-                            <div class="text-[#50fa7b] text-[11px] font-bold mb-1">🟢 Live at project-one.me</div>
-                            <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project One Title</h2>
-                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your first project goes here. Built with custom architecture and high-performance algorithms.</p>
-                            <div class="flex space-x-4 text-xs font-bold">
-                                <a href="#" target="_blank" class="text-[#bd93f9] hover:underline">Visit Project ↗</a>
-                                <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#bd93f9] relative" id="proj-card-1">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#bd93f9] font-bold text-xs">// project_one.py</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8 items-start">
+                            <div class="w-1/2">
+                                <div class="text-[#50fa7b] text-[11px] font-bold mb-1">🟢 Live at project-one.me</div>
+                                <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project One Title</h2>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your first project goes here. Built with custom architecture and high-performance algorithms.</p>
+                                <div class="flex space-x-4 text-xs font-bold">
+                                    <a href="#" target="_blank" class="text-[#bd93f9] hover:underline">Visit Project ↗</a>
+                                    <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                                </div>
+                            </div>
+                            <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
+                                // Code preview or metrics snippet for Project 1
                             </div>
                         </div>
-                        <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
-                            // Code preview or metrics snippet for Project 1
-                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-proj-1">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
                     </div>
                 </div>
 
                 <!-- Project Card 2 (Orange #ffb86c) -->
-                <div class="portfolio-card w-full p-8 border-[#ffb86c] relative" id="proj-card-2">
-                    <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
-                        <span class="text-[#ffb86c] font-bold text-xs">// project_two.rs</span>
-                        <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
-                    </div>
-                    <div class="flex gap-8 items-start">
-                        <div class="w-1/2">
-                            <div class="text-[#ffb86c] text-[11px] font-bold mb-1">🟠 Live at project-two.me</div>
-                            <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project Two Title</h2>
-                            <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your second project goes here. Focused on systems programming or web applications.</p>
-                            <div class="flex space-x-4 text-xs font-bold">
-                                <a href="#" target="_blank" class="text-[#ffb86c] hover:underline">Visit Project ↗</a>
-                                <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#ffb86c] relative" id="proj-card-2">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#ffb86c] font-bold text-xs">// project_two.rs</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8 items-start">
+                            <div class="w-1/2">
+                                <div class="text-[#ffb86c] text-[11px] font-bold mb-1">🟠 Live at project-two.me</div>
+                                <h2 class="text-2xl font-extrabold text-[#f8f8f2] mb-3">Project Two Title</h2>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed mb-4">Description of your second project goes here. Focused on systems programming or web applications.</p>
+                                <div class="flex space-x-4 text-xs font-bold">
+                                    <a href="#" target="_blank" class="text-[#ffb86c] hover:underline">Visit Project ↗</a>
+                                    <a href="https://github.com/Medplane" target="_blank" class="text-[#f8f8f2]/70 hover:text-[#f8f8f2]">GitHub ↗</a>
+                                </div>
+                            </div>
+                            <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
+                                // Code preview or metrics snippet for Project 2
                             </div>
                         </div>
-                        <div class="w-1/2 bg-[#1e1f29] p-4 rounded-lg border border-[#6272a4]/40 font-mono text-[11px] text-[#f8f8f2]/90">
-                            // Code preview or metrics snippet for Project 2
-                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-proj-2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- WORKSPACE 3: GAME -->
-        <div id="view-game" class="workspace-view absolute inset-0 flex items-center justify-center hidden">
-            <div class="portfolio-card w-[480px] p-6 border-[#ff5555]" id="card-game" style="position: relative;">
-                <div class="flex items-center justify-between mb-4 pb-2 border-b border-[#6272a4]/40">
-                    <span class="text-[#ff5555] font-bold text-xs">// game.gd</span>
-                    <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+        <!-- WORKSPACE 3: EXPERIENCE (Separate Cards) -->
+        <div id="view-experience" class="workspace-view absolute inset-0 overflow-y-auto overflow-x-hidden hidden p-12">
+            <div class="max-w-[1000px] mx-auto flex flex-col gap-10 pb-24">
+
+                <!-- Experience Card 1 -->
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#ff5555] relative" id="exp-card-1">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#ff5555] font-bold text-xs">// experience_01.log</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8">
+                            <div class="w-1/4 text-xs text-[#6272a4] pt-1">Oct 2026 · Placeholder</div>
+                            <div class="w-3/4">
+                                <h2 class="text-xl font-extrabold text-[#f8f8f2]">Role / Experience Title 1</h2>
+                                <div class="text-xs font-bold text-[#8be9fd] mt-1 mb-3">Organization / Event Name</div>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                    Placeholder description for your first experience. Describe what you built, the technologies you used, and the outcome or impact.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-exp-1">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                    </div>
                 </div>
-                <h2 class="text-xl font-bold mb-2 text-[#ff5555]">Game Project Title</h2>
-                <p class="text-xs leading-relaxed text-[#f8f8f2]/80 mb-4">Description of your game development project goes here as a placeholder.</p>
-                <div class="text-[10px] text-[#6272a4]">Engine / Language</div>
+
+                <!-- Experience Card 2 -->
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#ff79c6] relative" id="exp-card-2">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#ff79c6] font-bold text-xs">// experience_02.log</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8">
+                            <div class="w-1/4 text-xs text-[#6272a4] pt-1">Nov 2026 · Placeholder</div>
+                            <div class="w-3/4">
+                                <h2 class="text-xl font-extrabold text-[#f8f8f2]">Role / Experience Title 2</h2>
+                                <div class="text-xs font-bold text-[#8be9fd] mt-1 mb-3">Organization / Event Name</div>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                    Placeholder description for your second experience. Edit this text later with your specific achievements and responsibilities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-exp-2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                    </div>
+                </div>
+
+                <!-- Experience Card 3 -->
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#8be9fd] relative" id="exp-card-3">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#8be9fd] font-bold text-xs">// experience_03.log</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8">
+                            <div class="w-1/4 text-xs text-[#6272a4] pt-1">2026 · Placeholder</div>
+                            <div class="w-3/4">
+                                <h2 class="text-xl font-extrabold text-[#f8f8f2]">Role / Experience Title 3</h2>
+                                <div class="text-xs font-bold text-[#8be9fd] mt-1 mb-3">Organization / Event Name</div>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                    Placeholder description for your third experience. Highlight key skills, languages, or teamwork involved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-exp-3">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                    </div>
+                </div>
+
+                <!-- Experience Card 4 -->
+                <div class="relative w-full flex items-center justify-center">
+                    <div class="portfolio-card w-full p-8 border-[#f1fa8c] relative" id="exp-card-4">
+                        <div class="flex items-center justify-between mb-6 pb-3 border-b border-[#6272a4]/40">
+                            <span class="text-[#f1fa8c] font-bold text-xs">// experience_04.log</span>
+                            <div class="flex space-x-1.5"><div class="w-3 h-3 rounded-full bg-[#ff5555]"></div><div class="w-3 h-3 rounded-full bg-[#f1fa8c]"></div><div class="w-3 h-3 rounded-full bg-[#50fa7b]"></div></div>
+                        </div>
+                        <div class="flex gap-8">
+                            <div class="w-1/4 text-xs text-[#6272a4] pt-1">2025 · Placeholder</div>
+                            <div class="w-3/4">
+                                <h2 class="text-xl font-extrabold text-[#f8f8f2]">Role / Experience Title 4</h2>
+                                <div class="text-xs font-bold text-[#8be9fd] mt-1 mb-3">Organization / Event Name</div>
+                                <p class="text-xs text-[#f8f8f2]/80 leading-relaxed">
+                                    Placeholder description for your fourth experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fake-cursor" id="cursor-exp-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 2L11.5 21L14 14L21 11.5L4 2Z" fill="#f8f8f2" stroke="#282a36" stroke-width="2"/></svg>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -183,21 +281,23 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        function animateCenterCard(cardId, cursorId) {
+        // Exact cursor drag animation from your code, supporting a stagger delay and vertical title-bar offset
+        function animateCenterCard(cardId, cursorId, delay = 0.2, yOffset = -160) {
+            gsap.killTweensOf([cardId, cursorId]);
             gsap.set(cardId, { x: 900, y: 0, opacity: 0 });
-            gsap.set(cursorId, { x: 1050, y: -160, opacity: 1, scale: 1, position: "absolute", left: "50%", top: "50%" });
+            gsap.set(cursorId, { x: 1050, y: yOffset, opacity: 1, scale: 1, position: "absolute", left: "50%", top: "50%" });
 
-            const tl = gsap.timeline({ delay: 0.2 });
-            tl.to(cursorId, { x: 900 + 30, y: -160, duration: 0.7, ease: "power2.out" })
+            const tl = gsap.timeline({ delay: delay });
+            tl.to(cursorId, { x: 900 + 30, y: yOffset, duration: 0.7, ease: "power2.out" })
               .to(cursorId, { scale: 0.85, duration: 0.1 })
               .to(cardId, { x: 0, y: 0, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
-              .to(cursorId, { x: 30, y: -160, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
+              .to(cursorId, { x: 30, y: yOffset, opacity: 1, duration: 0.9, ease: "power3.inOut" }, "<")
               .to(cursorId, { scale: 1, duration: 0.1 })
               .to(cursorId, { x: "+=100", y: "+=60", opacity: 0, duration: 0.5, ease: "power2.in" });
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            animateCenterCard("#card-about", "#cursor-about");
+            animateCenterCard("#card-about", "#cursor-about", 0.2, -160);
             // Highlight default active tab color on load
             const defaultTab = document.getElementById('tab-about');
             defaultTab.style.color = defaultTab.getAttribute('data-color');
@@ -224,14 +324,15 @@
             activeTab.style.fontWeight = 'bold';
 
             if (workspaceName === 'about') {
-                animateCenterCard("#card-about", "#cursor-about");
+                animateCenterCard("#card-about", "#cursor-about", 0.2, -160);
             } else if (workspaceName === 'projects') {
-                gsap.fromTo("#proj-card-1, #proj-card-2", 
-                    { y: 50, opacity: 0 }, 
-                    { y: 0, opacity: 1, duration: 0.6, stagger: 0.2, ease: "power2.out" }
-                );
-            } else if (workspaceName === 'game') {
-                animateCenterCard("#card-game", "#cursor-game");
+                animateCenterCard("#proj-card-1", "#cursor-proj-1", 0.1, -110);
+                animateCenterCard("#proj-card-2", "#cursor-proj-2", 0.4, -110);
+            } else if (workspaceName === 'experience') {
+                animateCenterCard("#exp-card-1", "#cursor-exp-1", 0.1, -85);
+                animateCenterCard("#exp-card-2", "#cursor-exp-2", 0.35, -85);
+                animateCenterCard("#exp-card-3", "#cursor-exp-3", 0.6, -85);
+                animateCenterCard("#exp-card-4", "#cursor-exp-4", 0.85, -85);
             }
         }
 
@@ -239,7 +340,7 @@
             if (e.altKey) {
                 if (e.key === '1') switchTab('about');
                 if (e.key === '2') switchTab('projects');
-                if (e.key === '3') switchTab('game');
+                if (e.key === '3') switchTab('experience');
             }
         });
     </script>
